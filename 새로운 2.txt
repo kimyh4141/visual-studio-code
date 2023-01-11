@@ -1,0 +1,29 @@
+1. html : 문서의 구조
+Element(요소) : <시작태그>내용</종료태그>
+contents(내용) : 시작태그와 종료태그 사이의 내용
+				구성요소 : text or element
+start tag(시작태그)	
+end tag(종료태그)
+empty tag(단독태그) : 컨텐츠와 종료태그가 없는 태그 ex) <img/>, <hr/>, <br/>
+attribute(속성) : element의 시작태그에 위치
+				ex) class, id
+		1. 속성이름 = "속성 값" or 속성이름 = '속성 값'
+		2. 사전에 정의된 속성, 사용자 정의 속성 ( 'data-' 로 시작)
+		
+2. css : 스타일(화장발)
+
+box model : 컨텐츠영역, 내부여백, 경계선, 외부영역
+
+selector (선택자) {
+	속성1 : 값;
+	속성2 : 값;
+}
+
+블록 레벨
+	- 영역을 한줄 모두 차지
+	- ex) <p>
+인라인 레벨
+	- 영역을 컨텐츠만큼만 차지
+	- ex) <span>
+	
+3. javascript : 사용자와의 상호작용
