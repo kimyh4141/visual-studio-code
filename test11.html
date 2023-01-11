@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{outline: 1px solid red;}
+    </style>
+
+</head>
+<body>
+
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <div>
+        <button class="btn1">버튼1</button>
+        <button class="btn2">버튼2</button>
+        <button class="btn3">버튼3</button>
+    </div>
+    <script>
+        const $li = document.querySelector('ul>li:nth-child(1)');
+        $li.style.background = 'yellow';
+
+        const $btn1 = document.querySelector('.btn1');
+        const $btn2 = document.querySelector('.btn2');
+        const $btn3 = document.querySelector('.btn3');
+
+        $btn1.addEventListener('click',()=>{alert('버튼1')});
+        $btn2.addEventListener('click',()=>{alert('버튼2')});
+        $btn3.addEventListener('click',()=>{alert('버튼3')});
+    </script>
+</body>
+</html>
