@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body * { outline: 1px solid red;}
+        .wrap {
+            display: grid;
+            grid-template-areas:
+                "t"
+                "h"
+                "g"
+                "m"
+                "f";
+            grid-template-rows: 50px 150px 50px auto 100px;
+        }
+
+        .wrap .topmenu {
+            display: flex;
+            justify-content: space-between;
+        }
+        .wrap .topmenu .left {
+            width: 100px;
+        }
+        .wrap .topmenu .right {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="topmenu">
+            <div class="left">로고</div>
+            <div class="right">로그인/회원가입</div>
+        </div>
+        <header class="header">header</header>
+        <nav class="gnb">gnb</nav>
+        <main class="main">
+            lorem*20
+        </main>
+        <footer class="footer">footer</footer>
+    </div>
+</body>
+</html>
