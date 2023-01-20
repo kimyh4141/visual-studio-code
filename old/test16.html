@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    <script></script>
+</head>
+<body>
+    <form action="">
+        <ol>
+            <li>text: <input type="readonly"></li>
+            <li>search: <input type="search"><input type="button" value="검색"></li>
+            <li>tel: <input type="tel" required></li>
+            <li>url: <input type="url"></li>
+            <li>email: <input type="email" placeholder="이메일을 입력하세요" list="catalog" multiple>
+                <datalist id="catalog">
+                    <option value="test1@test.com"></option>
+                    <option value="test2@test.com"></option>
+                    <option value="test3@test.com"></option>
+                </datalist>
+            </li>
+            <li>password: <input type="password" minlength="4" maxlength="10" size="1"></li>
+            <li>date: <input type="date"></li>
+            <li>month: <input type="month"></li>
+            <li>week: <input type="week"></li>
+            <li>time: <input type="time"></li>
+            <li>datetime-local: <input type="datetime-local"></li>
+            <li>number: <input type="number" min="10" max="20" step="2"></li>
+            <li>range: <input type="range" min="10" max="20" step="2" id="range"></li>
+            <li>color: <input type="color"></li>
+            <li>checkbox: <input type="checkbox"></li>
+            <li>radio: <input type="radio"></li>
+            <li>file: <input type="file" multiple></li>
+            <li>submit: <input type="submit"></li>
+            <li>image: <input type="image" src="img/img2.jpg" width="50" height="50"></li>
+            <li>button: <input type="button" value="버튼"></li>
+            <li>cancel: <input type="reset" value="취소"></li>
+            <li>hidden: <input type="hidden" name="flag" value="yes"></li>
+        </ol>
+    </form>
+</body>
+</html>

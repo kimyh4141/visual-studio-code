@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            outline: 1px solid red;
+            width: 70%;
+        }
+        table {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            background-color: yellow;
+            width: 100%;
+        }
+        td,th {
+            border: 1px solid gray;
+        }
+        
+        table thead {
+            background-color: orange;
+        }
+        table tfoot {
+            background-color: aqua;
+        }
+        table tbody tr :nth-child(2n+1) {
+            background-color: orchid;
+        }
+        td{
+            background-color: blue;
+        }
+        th {
+            background-color: darkgreen;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <table>
+        <caption>테이블 제목</caption>
+        <thead>
+            <tr>
+                <td colspan="2" style="background-color: deeppink;">col1</th>
+                <th>col2</th>
+                <th>col3</th>
+            </tr>
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td>col3</td>
+            </tr>
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td>col3</td>
+            </tr>
+        </thead>
+        <tbody>
+            <colgroup>
+                <col span="2" style="font-size: 2em; background-color: gray;">
+                <col style="font-size: 3em; background-color: lightskyblue;">
+                <col style="font-size: 4em;">
+            </colgroup>
+            <tr>
+                <td colspan="2">col1</td>
+                <!-- <td>col2</td> -->
+                <td>col3</td>
+            </tr>
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td rowspan="3" style="background-color: black;">col3</td>
+            </tr>
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td>col3</td>
+            </tr>
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td>col3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td>col3</td>
+            </tr>
+        </tfoot>
+        <tr>
+            <td>col1</td>
+            <td>col2</td>
+            <td>col3</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>창제목</title>
+        <style>
+            button.btn {
+                background: yellow;
+                color : red;
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>hello world~!</h3>
+        <hr>
+        <button class="btn">클릭!</button>
+        <script>
+            const $btn = document.querySelector('button.btn');
+            $btn.addEventListener('click',function() {
+                $btn.style.background = 'green';
+                console.log('hi!');
+                alert('hi!');
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label.title {
+            display: inline-block;
+            width: 100px;
+        }
+        ul {
+            padding-left: 0;
+        }
+        ul, li {
+            list-style: none;
+        }
+        #id {
+            width: 200px;
+        }
+
+        #region {
+            width: 100px;
+        }
+        .btn {
+            background-color: #eee;
+            border: none;
+            border-radius: 10%;
+        }
+        .btn.btnJoin {
+            color: red;
+        }
+        .btn.btnCancel {
+            color: blue;
+        }
+        .btn.btnHome {
+            color: green;
+        }
+        section{
+            outline: 1px solid red;
+            width: 385px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section>
+            <h3>회원가입</h3>
+            <form action="" method="post">
+                <ul>
+                    <li><label class="title" for="id">아이디</label><input type="text" id="id" maxlength="10"></li>
+                    <li><label class="title" for="pw">비밀번호</label><input type="password" id="pw"></li>
+                    <li>
+                        <fieldset>
+                            <legend>취미</legend>
+                            <!-- <label class="title" for="">취미</label> -->
+                            <input type="checkbox" name="hobby" value="reading"><label>독서</label>
+                            <input type="checkbox" name="hobby" value="swim" checked><label>수영</label>
+                            <input type="checkbox" name="hobby" value="climb" checked><label>등산</label>
+                            <input type="checkbox" name="hobby" value="golf"><label>골프</label>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <label class="title" for="">성별</label>
+                        <input type="radio" name="gender"><label for="">남자</label>
+                        <input type="radio" name="gender" checked><label for="">여자</label>
+                    </li>
+                    <li>
+                        <label class="title" for="">지역</label>
+                        <select name="region" id="region" size="3" multiple>
+                        <!-- <option value="">==선택==</option> -->
+                        <option value="ulsan" >울산</option>
+                        <option value="busan"selected>부산</option>
+                        <option value="seoul">서울</option>
+                    </select>
+                    </li>
+                    <li>
+                        <label class="title" for="comment">하고싶은 말</label><br>
+                        <textarea name="comment" id="comment" cols="50" rows="5">반갑습니다</textarea>
+                    </li>
+                    <li>
+                        <!-- 서버 전송 -->
+                        <input class="btn btnJoin" type="submit" value="가입">
+                        <!-- 입력 초기화 -->
+                        <input class="btn btnCancel" type="reset" value="취소">
+                        <!-- 단순 클릭 이벤트 -->
+                        <input class="btn btnHome" type="button" value="홈으로">
+                    </li>
+                    <li>
+                        <!-- form 태그 안에 있으면 type = "submit"가 기본값 -->
+                        <button>가입</button>
+                        <button type="reset">취소</button>
+                        <button>홈으로</button>
+                    </li>
+                    <li>
+                        <label for="">점심메뉴?</label><br>
+                        <input list="food">
+                        <datalist id="food">
+                            <option value="김밥"/>
+                            <option value="라면"/>
+                            <option value="떡볶이"/>
+                        </datalist>
+
+                    </li>
+                </ul>
+            </form>
+                <!-- form 태그 안에 있으면 type = "buttom"가 기본값 -->
+                <button onclick="const a=10;const b=20;const z=a+b;alert(z);">가입</button>
+                <button ondblclick="func()">취소</button>
+                <button onmouseover="func()">홈으로</button>
+        </section>
+    </main>
+    <footer></footer>
+    <script>
+
+        function func() {
+            const c=10;
+            const d=20;
+            const y=c+d;
+            alert(y);
+        }
+    </script>
+</body>
+</html>

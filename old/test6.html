@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* selector 우선순위 : id > class > element */
+        p#id1.c1 {
+            background: orange;
+        }
+        #id1 {
+            background: yellowgreen;
+        }
+        .c1 {
+            background: pink;
+        }
+        p {
+            border: 5px solid red;
+            background: yellow;
+            padding: 10px;
+        }
+        p#id1 {
+            background: gray;
+        }
+        h1.c1 {
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <p class="c1" id="id1">반갑습니다.</p>
+    <h1 class="c1">javascript</h1>
+    <h1 class="c1">html</h1>
+    <iframe src="./test5.html" frameborder="0"></iframe>
+</body>
+</html>

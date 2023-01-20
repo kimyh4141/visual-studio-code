@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:link { /* 사용자가 한번도 링크를 통해 방문하지 않은 상태 */
+            color : gray;
+        }
+        a:visited { /* 사용자가 한번이라도 링크를 통해 방문한 상태 */
+            color : blue;
+        }
+        a:hover { /* 마우스 커서가 링크 위에 올라가 있는 상태 */
+            color: rgb(206, 214, 93);
+        }
+        a:acitve { /* 마우스 커서가 링크를 클릭하고 있는 상태 */
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.gmarket.co.kr" target="_self">G마켓_self</a><br>
+    <a href="http://www.gmarket.co.kr" target="_blank">G마켓_blank</a><br>
+    <a href="http://www.gmarket.co.kr" target="_parent">G마켓_parent</a><br>
+    <a href="http://www.gmarket.co.kr" target="_top">G마켓_top</a><br>
+
+    <iframe src="./test6.html" frameborder="0" width="500" height="300"></iframe>
+</body>
+</html>
