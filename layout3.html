@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* * {outline: 1px solid red;} */
+    body, ul, p {
+      margin:0; padding:0;
+    }
+    body {
+      /* margin:0; */
+    }
+
+    ul {
+      /* margin:0; padding:0; */
+      list-style: none;
+    }
+
+    a{
+      text-decoration: none;
+      color:inherit;
+    }
+
+
+    /* 전체 레이아웃 */
+    .wrap {
+      display: grid;
+      grid-template-areas: 
+        "um       um      um"
+        "hd-l     hd      hd-r"
+        "gnb-l    gnb     gnb-r"
+        "mn-l     mn      mn-r"
+        "fm-l     fm      fm-r"
+        "ft-l     ft      ft-r"
+      ;
+      grid-template-columns: 1fr minmax(300px,1000px) 1fr; 
+      grid-template-rows: 50px 200px 50px auto 50px auto;
+    }
+
+    /* 메인 레아아웃 */
+    .wrap .item.mn main{
+      display: flex;
+      /* height:250px; */
+      border : 10px solid #000;
+      box-sizing: border-box;
+      padding:5px;
+    }
+    .wrap .mn .content{
+      flex:6;
+      height:100%;
+    }
+    .wrap .mn .sb{
+      flex:2;
+      height:100%;
+    }
+    .wrap .mn .sm{
+      flex:2;
+      height:100%;
+    }
+    /* upper most */
+    .wrap .item.um {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top:0;
+    }
+    .wrap .item.um,
+    .wrap .item.um-l,
+    .wrap .item.um-r {
+      grid-area: um;
+      background-color: #333;
+      color:#eee;
+    }
+    
+    .wrap .item.um .wrap-um{
+      display: flex;
+      width:1000px;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 15px;
+    }
+    /* logo */
+    .wrap .item.um .logo .fa-solid.fa-mug-hot{
+      font-size: 3rem;
+      color: #eee;
+
+    }
+    /* search */
+    .wrap .item.um .search input[type=search]{
+      width:300px;
+      outline: none;
+      padding: 3px;
+    }
+    .wrap .item.um .search .fa-sharp.fa-solid.fa-magnifying-glass {
+      padding: 0 5px;
+    }
+
+    /* uppermost menu */
+    .wrap .item.um .top-menu .menu{
+      display: flex;
+    }
+    .wrap .item.um .top-menu .menu .item:nth-of-type(1) {
+      margin-right: 10px;
+    }
+
+    /* header */
+    .wrap .item.hd {
+      background-image: url("https://cdn.pixabay.com/photo/2022/01/31/15/18/coffee-6984075_960_720.jpg");
+      background-size: 1000px 200px;
+      background-position: center;    /* 배경이미지 위치 지정 */
+      background-repeat: no-repeat;   /* 이미지 반복제거 */
+      background-origin: border-box;  /* 경계선까지 이미지 반영 */
+    }
+
+    /* GNB */
+    .wrap .item.gnb {
+      display:flex;
+      align-items: center;
+      background-color: #555;
+      color: #eee;
+      position:sticky;
+      top:50px;
+      padding: 0 10px;
+    }
+    .wrap .item.gnb .wrap-depth1 {
+      width:100%;
+    }
+    .wrap .item.gnb .depth1 {
+      display: flex;
+      justify-content: space-between;
+    }
+    .wrap .item.gnb .depth1 .menu{
+      flex: 1;
+      text-align: center;
+      letter-spacing: 0.2rem;
+      padding: 5px 0;
+    }
+    .wrap .item.gnb .depth1 .menu:hover{
+      background-color: #777;
+      color: #fff;
+    }
+    .wrap .item.gnb .depth1 .menu a{
+      display: inline-block;
+      width:100%;
+    }
+
+    /* main */
+
+
+    .wrap .item.mn-r .wrap-ads {
+      position:sticky;
+      top:300px;
+      background-color: white;
+      border-radius: 10%;
+      margin-left:8px;
+      width: 100px;
+      height:200px;
+      padding:10px;
+      box-shadow: 5px 5px 2px 1px rgba(0,0,0,0.2);
+    }
+
+    /* footer */
+    .wrap .item.ft .ft-contents {
+      /* background-color: yellow; */
+      display: grid;
+      grid-template-areas: 
+        "c1 c2 c3 c4"
+        "c5 c5 c5 c5";
+      grid-template-columns: 1fr 1fr 2fr 3fr;
+      grid-auto-rows: auto; 
+      padding:20px; 
+      row-gap: 20px;
+      column-gap: 10px;
+      font-size: 0.75rem;
+      color:#7D7D7D;
+    }
+    .wrap .item.ft .ft-contents .ft-contents-1 {
+      width:100px; height:100px;
+      background-color: red;
+      color:white;
+      text-align: center;
+      line-height: 100px;
+    }
+    .wrap .item.ft .ft-contents .ft-contents-5 {
+      grid-area: c5;
+      text-align: center;
+    }
+    .wrap .item.ft .ft-contents p {
+      padding-bottom: 5px;
+    }
+    .wrap .item.ft .ft-contents .title {
+      font-weight: bold;
+      color:#000;
+    } 
+    .wrap .item.ft .ft-contents .tel {
+      font-weight: bold;
+      color:#000;
+      font-size: 1.3rem;
+      padding: 10px 0;
+    } 
+    .wrap .item.ft .ft-contents .tel i {
+      margin-right: 10px;
+    }
+    .wrap .item.ft .ft-contents .account {
+      font-weight: bold;
+      color: rgb(55, 55, 160);
+    }
+    .wrap .item.ft .ft-contents .highlight-1{
+      background-color: blue;
+      color:white;
+    }
+    .wrap .item.ft .ft-contents .highlight-2{
+      background-color: black;
+      color:white;
+    }
+    .wrap .item.ft .ft-contents .highlight-3{
+      background-color: lightgray;
+    }
+  </style>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/023d8f21ed.css" crossorigin="anonymous"> 
+  <script src="https://kit.fontawesome.com/023d8f21ed.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="item um-l">item1</div>
+    <div class="item um">
+      <div class="wrap-um">
+        <div class="logo">
+          <a href="layout2.html"><i class="fa-solid fa-mug-hot"></i></a>
+        </div>
+        <div class="search">
+          <input type="search" placeholder="검색어를 입력하세요"><a href=""><i class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
+        </div>
+        <div class="top-menu">
+          <ul class="menu">
+            <li class="item"><a href="">sign-in</a></li>
+            <li class="item"><a href="">sign-up</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="item um-r">item3</div>
+    <div class="item hd-l">item4</div>
+    <div class="item hd">item5</div>
+    <div class="item hd-r">item6</div>
+    <div class="item gnb-l">item7</div>
+    <div class="item gnb">
+      <nav class="wrap-depth1">
+        <ul class="depth1">
+          <li class="menu menu1"><a href="">menu1</a></li>
+          <li class="menu menu1"><a href="">menu1</a></li>
+          <li class="menu menu2"><a href="">menu2</a></li>
+          <li class="menu menu3"><a href="">menu3</a></li>
+          <li class="menu menu4"><a href="">menu4</a></li>
+          <li class="menu menu5"><a href="">menu5</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="item gnb-r">item9</div>
+    <div class="item mn-l">item10</div>
+    <div class="item mn">
+      <main>
+        <div class="content">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate perferendis corrupti maxime sequi doloremque quaerat, ut est sed laudantium et atque perspiciatis, debitis libero aut enim quisquam quod quis sunt!
+          Quisquam temporibus quam mollitia quibusdam quod, aspernatur aliquam modi adipisci ab aperiam autem nihil maxime quidem. Iste facere ea aliquam at. Ab eum possimus vero nisi repellendus, repudiandae hic saepe?
+          Similique autem ratione nesciunt vitae repellat impedit alias ab nemo minima dolore quasi perferendis numquam accusantium nisi atque cupiditate omnis ullam ipsa quo dicta quis, iste soluta pariatur! Quia, ipsa.
+          Eum, veritatis! Quod iure assumenda commodi odio provident eos, necessitatibus ab accusantium fugit, quis non quae error. Amet debitis ut reprehenderit. Expedita, exercitationem tempore rerum eius quidem animi nemo incidunt!
+          Illo sequi officia perspiciatis similique! Voluptatum temporibus inventore iusto totam praesentium sed ut accusamus quidem alias libero dolorum, cupiditate, qui eaque impedit sunt. Esse eligendi neque, nemo minus magnam soluta?
+          Voluptate reprehenderit sint nesciunt facere perspiciatis at nulla commodi totam officiis fugit, error, dolores, praesentium animi modi. Fugit provident, eligendi dolorum iste, libero obcaecati tempora ex, culpa neque delectus quod.
+          Vitae officia pariatur blanditiis nihil repellendus illo? Pariatur iure incidunt sequi maxime provident eos reprehenderit molestiae id cumque, ullam harum placeat debitis officiis odit nam consequatur, veniam veritatis, enim quas?
+          Ad molestiae qui fuga earum soluta dignissimos debitis deleniti, maxime id autem. Eveniet et excepturi dicta explicabo doloribus dignissimos earum in adipisci, enim ipsum nesciunt dolores fuga, mollitia nisi deserunt!
+          Exercitationem earum incidunt consequuntur enim ut veniam et reiciendis repellendus quae eum soluta perferendis delectus laboriosam, suscipit consectetur ad ducimus adipisci molestias nesciunt culpa eveniet sint! Expedita enim et veniam?
+          Earum dolores explicabo nobis consectetur dolore aliquam amet magnam? Dicta voluptatem accusantium, quam iure necessitatibus hic autem illum ad aspernatur aliquid atque dignissimos sint placeat. Possimus dignissimos repudiandae odio id.</p>
+        </div>
+        <div class="sb">sidebanner</div>
+        <div class="sm">sidemenu</div>
+      </main>
+    </div>
+    <div class="item mn-r">
+      <div class="wrap-ads">
+        <ul>
+          <li class="ad1">광고1</li>
+          <li class="ad2">광고2</li>
+          <li class="ad3">광고3</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item fm-l">item13</div>
+    <div class="item fm">item14</div>
+    <div class="item fm-r">item15</div>
+    <div class="item ft-l">item16</div>
+    <div class="item ft">
+      <div class="ft-contents">
+        <div class="ft-contents-1">KH CAFFE</div>
+        <div class="ft-contents-2">
+          <p class="title">POLICY</p>
+          <p><a href="#">HOME</a></p>
+          <p><a href="#">AGREEMENT</a></p>
+          <P style="font-weight: bold;color:violet;"><a href="#">SITE POLICY</a></P>
+          <P><a href="#">MEMBERSHIP</a></P>
+        </div>
+        <div class="ft-contents-3">
+          <p class="title">CUSTOMER CENTER</p>
+          <p>평일 : 오전09:00 ~ 오후18:00</p>
+          <p>점심 : 오후12:00 ~ 오후13:00 토/일/공휴일 휴무</p>
+          <p class="tel"><i class="fa-solid fa-phone"></i>070-1234-5678</p>
+          <p class="account">국민은행 : 015-13413-123-01 (예금주 : 홍길동)</p>
+          <p class="account">농협은행 : 15413-123-01 (예금주 : 홍길동)</p>
+        </div>
+        <div class="ft-contents-4">
+          <p class="title">COMPANY INFORMATION</p>
+          <p>COMPANY : <span class="highlight-1">KH CAFFE</span>   PROPRIETOR : 홍길동, 이순신</p>
+          <p>TEL: 070-1234-5678   E-MAIL : WEBMASTER@HOTMAIL.COM</p>
+          <p>ADDRESS1 : 울산광역시 남구 삼산로35번길 19 (신정동)</p>
+          <p>ADDRESS2 : 울산광역시 남구 삼산로35번길 19 (신정동) 502호 (매장)</p>
+          <p>BUSINESS LICENSE : 417-24-78612</p>
+          <p>MAIL ORDER LICENSE : 울산 제2010-6호 [ <span class="highlight-2"><a href="#">사업자정보확인</span> ]</a></p>
+          <p>PERSONAL INFO MANAGER : 홍길동</p>
+        </div>
+        <div class="ft-contents-5">
+          COPYRIGHT(C) COPYRIGHT © 울산KH정보교육원. ALL RIGHTS RESERVED. <span class="highlight-3">DESIGNED BY TESTKOREA DESIGN 3.0 VERSION.</span>
+        </div>
+      </div>
+    </div>
+    <div class="item ft-r">item18</div>
+  </div>
+</body>
+</html>
