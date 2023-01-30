@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* nav * {
+            outline: 1px solid red;
+        } */
+        ul {
+            padding: 0; margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .gnb .depth1{
+            display: flex;
+        }
+        .gnb .depth1 li {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #666;
+            background-color: #666;
+            color: #eee;
+        }
+        .gnb .depth1 li a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .gnb .depth1 li:hover a {
+            color: #fff;
+            background-color: #444;
+        }
+        .gnb .depth1 li:hover .depth2{
+            display: block;
+        }
+        .gnb .depth2 {
+            display: none;
+            box-shadow: 3px 3px 3px rga(0,0,0,0.2);
+        }
+        .gnb .depth2 li:hover a {
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+    <!-- nav>ul>li>a{menu_1$}*5 -->
+
+    <nav class="gnb">
+        <ul class="depth1">
+            <li>
+                <a href="#">menu1</a>
+                <ul class="depth2">
+                    <li><a href="layout3.html">menu11</a></li>
+                    <li><a href="">menu12</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu2</a>
+                <ul class="depth2">
+                    <li><a href="">menu21</a></li>
+                    <li><a href="">menu22</a></li>
+                    <li><a href="">menu23</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu3</a>
+                <ul class="depth2">
+                    <li><a href="">menu31</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
