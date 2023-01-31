@@ -1,0 +1,18 @@
+@charset "utf-8";
+:root {
+    --btn-size-with-small: 2rem;
+    --btn-size-with-normal: 4rem;
+    --btn-size-with-large: 6rem;
+
+    --btn-size-hight-small: 1;
+    --btn-size-hight-normal: 1.5;
+    --btn-size-hight-large: 2;
+
+    --main-font-size-small: 0.75rem;
+    --main-font-size-normal: 1.25rem;
+    --main-font-size-large: 2rem;
+
+    --spacing-small : 0.5rem;
+    --spacing-normal : 1rem;
+    --spacing-large : 2rem;
+}
