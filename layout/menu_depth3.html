@@ -6,64 +6,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
+        body * {
             outline: 1px solid red;
         }
-        ul {
-            padding: 0; margin: 0;
-            list-style: none;
-            display: flex;
 
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
+        /* reset css : 기본 요소의 css 초기화 */
+        body,ul {
+            margin: 0; padding: 0;
         }
-        ul li {
-            line-height: 2rem; /* 줄간격 */
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* gnb */
+        .gnb .item {
             width: 100px;
-            background-color: #88ffff;
+            line-height: 1.7rem;
+            padding-left: 10px;
+        }
+        .gnb .item a {
+            display: inline-block;
+            width: 100%; height: 100%;
+        }
+        .gnb .depth2,
+        .gnb .depth3 {
+            display: none;
+            /* opacity: 0; 투명도 */
+            /* visibility: hidden; 공간을 차지함 */
+            position: absolute;
+        }
+
+        .gnb .depth1 > .item {
             position: relative;
         }
-        ul li:hover{
-            background-color: #009faf;    
-            color: #fff;
+        .gnb .depth2 {
+            display: absolute;
+            left: 0;
+            background-color: yellow;
         }
-        ul li:hover::before {
-            opacity: 1;
+        .gnb .depth3 {
+            top: 0; right: -110px;
+            background-color: yellowgreen;
         }
-        ul li::before {
-            content: ' ';
+
+        .gnb .depth1 > .item:hover .depth2 {
+            display: block;
+        }
+        .gnb .depth2 > .item:hover .depth3 {
+            display: block;
+        }
+
+        .gnb .depth1 {
+            display: flex;
+        }
+
+
+        /* nav {
+            padding: 100px;
+        } */
+        /* ul > li {
+            line-height: 2; /* 현재 폰트의 비율 */
+        /* } */
+        /* ul > li:nth-of-type(2) {
+            background-color: yellow;
             position: absolute;
-            bottom: 0; left:calc((100px - 5px) / 2);
-            /* transform: rotate(270deg); 각도 */
-            opacity: 0; /* 투명도 (0~1) */
-            /* background-color: yellowgreen; */
-            /* width: 5px; height: 5px; */
-            border: 5px solid violet;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: #000;
-            border-left-color: transparent;
-        }
-        
-        ul li a {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            text-decoration: none;
-            color: inherit; /* 상속 */
-            font-weight: bold;
-        }
+            bottom: 32px; right: -50px;
+        } */ 
     </style>
 </head>
 <body>
-    <h1> 1-depth menu </h1>
-    <nav>
-        <ul>
-            <li><a href="http://www.naver.com">menu1</a></li>
-            <li><a href="http://www.google.com">menu2</a></li>
-            <li><a href="">menu3</a></li>
+
+    <nav class="gnb">
+        <ul class="depth1">
+            <li class="item">
+                menu1
+                <ul class="depth2">
+                    <li class="item"><a href="#">menu1_1</a></li>
+                    <li class="item"><a href="#">menu2_2</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                menu2
+                <ul class="depth2">
+                    <li class="item"><a href="#">menu2_1</a></li>
+                    <li class="item"><a href="#">menu2_2</a></li>
+                    <li class="item"><a href="#">menu2_3</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                menu3
+                <ul class="depth2">
+                    <li class="item">
+                        menu3_1
+                        <ul class="depth3">
+                            <li class="item"><a href="#">menu3_1_1</a></li>
+                            <li class="item"><a href="#">menu3_1_2</a></li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        menu3_2
+                        <ul class="depth3">
+                            <li class="item"><a href="#">menu3_2_1</a></li>
+                            <li class="item"><a href="#">menu3_2_2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus veritatis expedita aut dolorum consequatur, fugit, magnam perspiciatis voluptates molestiae eum cumque repellendus nulla saepe ipsum omnis sit commodi molestias quo?
+        Harum praesentium, nulla dicta iure modi accusantium distinctio sunt molestias vel quisquam voluptatem perferendis blanditiis aperiam id quam molestiae officiis mollitia ea voluptas maiores natus omnis fugiat! Magnam, velit perspiciatis.
+        Natus placeat magni esse distinctio eaque doloremque, alias temporibus quo porro nobis incidunt rerum reprehenderit dignissimos, ipsa in vero exercitationem quia sed quidem ex earum odio recusandae, commodi soluta! Adipisci.
+        Tempore perferendis placeat asperiores reprehenderit esse earum. Consequatur totam ipsum, nihil pariatur rem tempore doloremque facilis aperiam, ea sapiente non laboriosam quam ex, tempora voluptas aliquid? Explicabo ab corrupti nobis!
+        Quaerat totam omnis quis non animi, optio sed est sit temporibus minima esse quasi dignissimos deleniti libero error deserunt distinctio. Nesciunt perspiciatis ipsa officia ducimus corrupti amet incidunt, alias excepturi!
+        Repellat expedita dolore quasi aspernatur nihil itaque eveniet assumenda laudantium nesciunt quaerat, totam eos explicabo hic est autem qui voluptatum harum facilis? Ratione beatae reprehenderit incidunt quis modi odit sit.
+        Accusamus doloribus esse fugit deleniti quisquam ex consectetur culpa odit optio voluptates laudantium quam, et officia voluptatum vel cumque nam iusto ea. Delectus commodi facere cumque fugit beatae deleniti omnis?
+        Officiis autem dolores aspernatur repudiandae? Vitae eos dolorum minus hic, tempore obcaecati sequi dicta? Necessitatibus quas ex ad? Aut facilis enim vel libero consequatur consequuntur a eveniet repellat culpa porro!
+        Iure, corporis? Eius tempore rem sequi iure quam esse debitis a fuga minima expedita soluta facilis, explicabo temporibus corporis dolorem nostrum aperiam. Quis nostrum dignissimos adipisci facere odio. At, vel!
+        Non nostrum veritatis provident. Cumque, impedit veniam. Cumque quia, quaerat sint autem aspernatur et amet maiores totam praesentium facere vitae, eum sequi, repudiandae harum? Sint rem voluptatem quo inventore fuga.</p>
+    </main>
 </body>
 </html>
