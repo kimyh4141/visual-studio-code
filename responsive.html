@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { outline: 1px solid red;}
+
+        /* reset css */
+        html,body,ul {
+            margin: 0; padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 기본 layout */
+        .navbar-logo {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .navbar-logo .logo {
+            width: 50px;
+        }
+        .navbar-logo .gnb {
+            display: flex;
+        }
+        .navbar-logo .gnb .item {
+            width: 70px;
+        }
+        .navbar-logo .sns {
+            display: flex;
+            align-items: center;
+        }
+
+        #hamburger {
+            display: none;
+            position: absolute;
+            top: 0; right: 0;
+        }
+
+        /* 반응형 쿼리 */
+        @media screen and (width > 768px) {
+            body {
+                background-color: lightgreen;
+            }            
+        }
+        @media screen and (width <= 768px) {
+            body {
+                background-color: lightblue;
+            }            
+        }
+        @media screen and (width <= 480px) {
+            body {
+                background-color: lightyellow;
+            }           
+            .navbar-logo .gnb,
+            .navbar-logo .sns {
+                display: none;
+            } 
+            #hamburger {
+                display: block;
+            }
+
+            /* 햄버거 버튼 클릭 시 */
+            .navbar-logo.active,
+            .navbar-logo .gnb.active,
+            .navbar-logo .sns.active {
+                display: block;    
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="navbar-logo">
+            <div class="logo">
+                로고
+            </div>
+            <ul class="gnb">
+                <li class="item"><a href="">menu1</a></li>
+                <li class="item"><a href="">menu2</a></li>
+                <li class="item"><a href="">menu3</a></li>
+                <li class="item"><a href="">menu4</a></li>
+                <li class="item"><a href="">menu5</a></li>
+            </ul>
+            <ul class="sns">
+                <li class="item">페북</li>
+                <li class="item">트윗</li>
+                <li class="item">인스타</li>
+            </ul>
+            <a href="#" id="hamburger">햄버거</a>
+        </div>
+        <main>메인</main>
+        <footer>푸터</footer>
+    </div>
+    <script>
+        const $hamburger = document.getElementById('hamburger');
+        
+        $hamburger.addEventListener('click',function() {
+            const $navbarLogo = document.querySelector('.navbar-logo');
+            const $gnb = document.querySelector('.navbar-logo .gnb');
+            const $sns = document.querySelector('.navbar-logo .sns');
+            console.log('햄버거 버튼 클릭됨!')
+            console.log($navbarLogo,$gnb);
+
+            // active 클래스값이 없으면 추가, 있으면 제거
+            $navbarLogo.classList.toggle('active');
+            $gnb.classList.toggle('active');
+            $sns.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>
