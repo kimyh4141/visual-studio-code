@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { outline: 1px solid red;}
+        .cont {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: 50px;
+            grid-auto-rows: 100px;
+            width: 500px; height: 300px;
+            outline: 3px solid blue;
+
+            /* grid cell 내에서의 item 컨텐츠 배치 */
+            justify-items: center;
+            align-items: center;
+
+            /* grid 컨테이너 내에서 전체 item을 배치 */
+            justify-content: end;
+            align-content: end;
+        }
+
+        /* .cont .item:nth-of-type(1) {
+            justify-self: center;
+            align-self: center;
+        }
+        .cont .item:nth-of-type(5) {
+            justify-self: end;
+            align-self: end;
+        } */
+        
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+</body>
+</html>

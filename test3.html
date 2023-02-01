@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { outline: 1px solid red;}
+        .cont {
+            display: flex;
+
+            /* 주축 정의 세로축 정렬*/
+            flex-direction: row; 
+
+            /* 주축의 공간이 부족하면 다음으로 넘김 */
+            flex-wrap: nowrap;
+
+            /* 주축 정렬 */
+            justify-items: flex-start;      
+
+            /* 교차축 정렬 nowrap */
+            /* align-items: center; */
+
+            /* 교차축 정렬 wrap */
+            align-items: flex-start;
+
+            outline: 3px solid blue;
+            width: 300px; height: 300px;
+        }
+        .cont .item {
+            /* justify-self: start;      주축 정렬 */
+
+            /* 교차축 정렬 */
+            /* align-self: stretch;     */
+            outline: 3px solid yellowgreen;
+            background-color: yellow;
+        }
+
+        .cont .item:nth-of-type(1) {
+            /* 교차축 정렬 */
+            align-self: flex-end;
+            /* 아이템의 영역 정의 */
+            flex: 1;
+            /*
+            flex-grow: 1;       영역의 증가비중
+            flex-shrink: 1;     영역의 감소비중
+            flex-basis: 0;      기본크기
+            */   
+        }
+        .cont .item:nth-of-type(2) {
+            align-self: center;
+            /* 비율 */
+            flex: 2;
+        }
+        .cont .item:nth-of-type(3) {
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+</body>
+</html>
