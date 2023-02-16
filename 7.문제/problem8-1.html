@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./util.js"></script>
+</head>
+<body>
+    <div>
+        <input type="text" id="op1">
+        <select name="" id="operator">
+            <option value="">연산자</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="op2">
+        <button id="resultBtn"> = </button>
+        <output id="result"></output>
+    </div>
+
+
+    <script>
+        const $op1 = document.getElementById('op1');
+        const $op2 = document.getElementById('op2');
+        const $operator = document.getElementById('operator');
+        const $resultBtn = document.getElementById('resultBtn');
+        const $result = document.getElementById('result');
+        
+        
+        // const calculator = data => {
+        //     let result = null;
+        //     switch(data.operator) {
+        //         case '+' : 
+        //         result = data.op1 + data.op2;
+        //         break;
+        //         case '-' :
+        //             result = data.op1 - data.op2;
+        //             break;
+        //         case '*' :
+        //             result = data.op1 * data.op2;
+        //             break;
+        //         case '/' :
+        //             result = data.op1 / data.op2;
+        //             break;
+        //         }
+        //         return result;
+        //     }
+
+            const displayResult = (evt,callback) => {
+                if(callback) callback();
+                $result.textContent = calculator({op1:+$op1.value,op2:+$op2.value, operator:$operator.value });        
+            }
+            $operator.addEventListener('change',displayResult,false);
+            $resultBtn.addEventListener('click',e=> {
+                const f = () => {
+                    if(!['+','-','*','/'].includes($operator.value)){
+                        alert('연산자를 선택바랍니다');
+                        $operator.focus();
+                        return;
+                        }
+                }
+                displayResult(e,f);
+            }),false;
+
+    // $operator.addEventListener('change',e=>{
+    //     // const cal = {};
+    //     // cal.op1 = +$op1.value;  // +가 숫자타입으로 변환시킴
+    //     // cal.op2 = +$op2.value;
+    //     // cal.operator = $operator.value; // {10,20,'+'}
+    //     $result.textContent = calculator({op1:+$op1.value,op2:+$op2.value, operator:$operator.value });
+    // },false);
+
+    // $resultBtn.addEventListener('click',e=>{
+    //     if(!['+','-','*','/'].includes($operator.value)){
+    //         alert('연산자를 선택바랍니다');
+    //         $operator.focus();
+    //         return;
+    //         }
+    //     $result.textContent = calculator({ op1:+$op1.value,op2:+$op2.value, operator:$operator.value });
+    // },false);
+    
+    </script>
+</body>
+</html>
