@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>🔮 계산기</h1>
+
+<div class="input-box">
+  <input id="firstNumber" type="number">
+  <select name="calculation" id="calculation">
+    <option value="plus" selected>+</option>
+    <option value="minus">-</option>
+    <option value="multiplication">×</option>
+    <option value="division">÷</option> 
+  </select>
+  <input id="lastNumber" type="number">
+
+  &nbsp;<button type="button" onclick="calculation()">계산하기</button>
+</div>
+
+<p id="result" class="result">=</p>
+    
+    <script>
+        function calculation() {
+  const select = document.getElementById("calculation");
+  const type = select.options[select.selectedIndex].value;
+  const firstNumber = document.getElementById("firstNumber").value;
+  const lastNumber = document.getElementById("lastNumber").value;
+  const result = document.getElementById("result");
+  
+  if(type === "plus") {
+    result.innerText = plus(Number(firstNumber),Number(lastNumber));
+  } else if(type === "minus") {
+    result.innerText = minus(Number(firstNumber),Number(lastNumber));
+  } else if(type === "multiplication") {
+    result.innerText = multiplication(Number(firstNumber),Number(lastNumber));
+  } else if(type === "division") {
+    result.innerText = division(Number(firstNumber),Number(lastNumber));
+  }
+}
+
+function plus(num1, num2) {
+  return num1 + num2;
+}
+
+function minus(num1, num2) {
+  return num1 - num2;
+}
+
+function multiplication(num1, num2) {
+  return num1 * num2;
+}
+
+function division(num1, num2) {
+  return num1 / num2;
+}
+    </script>
+</body>
+</html>
